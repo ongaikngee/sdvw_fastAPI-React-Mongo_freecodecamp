@@ -2,6 +2,9 @@ from contextlib import asynccontextmanager
 from datetime import datetime
 import os
 import sys
+# from pathlib import Path
+# from dotenv import load_dotenv
+
 
 from bson import ObjectId
 from fastapi import FastAPI, status
@@ -10,6 +13,11 @@ from pydantic import BaseModel
 import uvicorn
 
 from dal import ToDoDAL, ListSummary, ToDoList
+
+# # Load .env from project root
+# project_root = Path(__file__).resolve().parents[1]  # backend/..
+# dotenv_path = project_root / ".env"
+# load_dotenv(dotenv_path)
 
 COLLECTION_NAME = "todo_lists"
 MONGODB_URI = os.environ["MONGODB_URI"]
